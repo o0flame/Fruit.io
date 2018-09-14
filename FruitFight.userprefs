@@ -1,14 +1,25 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/bulletFromOnline/BulletPattern.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy/enemyBulletCtrl.cs">
     <Files>
-      <File FileName="Assets/Scripts/player/playerController.cs" Line="98" Column="54" />
-      <File FileName="Assets/Scripts/Enemy/EnemyController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Enemy/yellowBugControl.cs" Line="119" Column="4" />
-      <File FileName="Assets/Scripts/player/playerAttributes.cs" Line="37" Column="3" />
-      <File FileName="Assets/charSelection.cs" Line="28" Column="2" />
-      <File FileName="Assets/testShooter.cs" Line="35" Column="1" />
-      <File FileName="Assets/bulletFromOnline/BulletPattern.js" Line="39" Column="23" />
+      <File FileName="Assets/Scripts/Enemy/EnemyController.cs" Line="321" Column="4" />
+      <File FileName="Assets/Scripts/player/playerAttributes.cs" Line="1" Column="1" />
+      <File FileName="Assets/UniBulletHell/Script/Controller/UbhShotCtrl.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/player/BulletsController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/player/playerController.cs" Line="1" Column="1" />
+      <File FileName="Assets/blinkScripts.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy/EnemySpawnManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy/enemyBulletCtrl.cs" Line="31" Column="81" />
+      <File FileName="Assets/Scripts/player/expSystem.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Enemy/addEnemy.cs" Line="1" Column="1" />
+      <File FileName="Assets/CreepSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets/UniBulletHell/Script/ShotPattern/UbhLinearLockOnShot.cs" Line="1" Column="1" />
+      <File FileName="Assets/UniBulletHell/Script/ShotPattern/UbhBaseShot.cs" Line="1" Column="1" />
+      <File FileName="Assets/UniBulletHell/Script/ShotPattern/UbhCircleShot.cs" Line="1" Column="1" />
+      <File FileName="Assets/UniBulletHell/Script/ShotPattern/UbhHoleCircleShot.cs" Line="1" Column="1" />
+      <File FileName="Assets/UniBulletHell/Script/ShotPattern/UbhHomingShot.cs" Line="1" Column="1" />
+      <File FileName="Assets/UniBulletHell/Script/ShotPattern/UbhLinearShot.cs" Line="1" Column="1" />
+      <File FileName="Assets/lightningBulletCtrl.cs" Line="18" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

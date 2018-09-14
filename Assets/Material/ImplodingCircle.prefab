@@ -99,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322659240791564}
   m_LocalRotation: {x: -0.19038513, y: -0.60905564, z: 0.15369667, w: 0.75444156}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4174993516200652}
@@ -229,7 +229,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1849786407
+  randomSeed: -802546671
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3725,15 +3725,15 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1310964767
+  randomSeed: -1382967846
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 1
+      scalar: 3
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3814,7 +3814,7 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.19682907, g: 0.759, b: 0.7794118, a: 1}
+      minColor: {r: 0.31401384, g: 0.4847363, b: 0.8897059, a: 1}
       maxColor: {r: 0.10510381, g: 0.25241017, b: 0.7941176, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -3877,8 +3877,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 15
-      minScalar: 10
+      scalar: 7
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4121,7 +4121,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 1
-    maxNumParticles: 20
+    maxNumParticles: 5
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -4423,13 +4423,13 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: 0.45945948
+          value: 0.05405444
           inSlope: 4.2161202
           outSlope: 4.2161202
           tangentMode: 0
         - serializedVersion: 2
           time: 1
-          value: 0.55405426
+          value: 0.14864922
           inSlope: -0.7889985
           outSlope: -0.7889985
           tangentMode: 0
@@ -7131,15 +7131,15 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 807905940
+  randomSeed: 1749117700
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 1
+      scalar: 3
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -7220,8 +7220,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.19682907, g: 0.759, b: 0.7794118, a: 1}
-      maxColor: {r: 0.048659172, g: 0.19545694, b: 0.7352941, a: 1}
+      minColor: {r: 0.17301023, g: 0.032439433, b: 0.7352941, a: 1}
+      maxColor: {r: 0.43685144, g: 0.037629742, b: 0.85294116, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -7283,8 +7283,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 10
-      minScalar: 8
+      scalar: 5
+      minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -7527,7 +7527,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 1
-    maxNumParticles: 20
+    maxNumParticles: 10
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -9695,7 +9695,7 @@ ParticleSystem:
       type: 0
       properties: 0
   LightsModule:
-    enabled: 1
+    enabled: 0
     ratio: 1
     light: {fileID: 108577366244957970, guid: 5c846e87d2cb7479c82540508b3a5a9f, type: 2}
     randomDistribution: 1
@@ -9746,7 +9746,7 @@ ParticleSystem:
     intensityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.11
+      scalar: 0.9
       minScalar: 1
       maxCurve:
         serializedVersion: 2

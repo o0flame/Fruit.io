@@ -8,9 +8,10 @@ public class lightningBulletCtrl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		self = GameObject.Find ("lightBolt(Clone)");
+		//self = GameObject.FindWithTag ("lightBolt");
+		self = gameObject;
 		player = GameObject.FindWithTag("FruitPlayer");
-		Debug.Log ("!!!!!!"+ self.name + player.name);
+		//Debug.Log ("!!!!!!"+ self.name + player.name);
 	}
 	
 	// Update is called once per frame

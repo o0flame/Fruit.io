@@ -113,25 +113,28 @@ public class addEnemy : MonoBehaviour {
 
 
 	public void setEnemyCtrl(GameObject Enemy){
-		Enemy.GetComponent<EnemyController> ().target = GameObject.FindWithTag ("FruitPlayer"); 
-		Enemy.GetComponent<EnemyController> ().enemySpawner = gameObject;
-		Enemy.GetComponent<EnemyController> ().setEnemyID (SpawnID);
-		Enemy.transform.SetParent (gameObject.transform);
+		if (Enemy.GetComponent<playerAttributes> () == null) {
+			Enemy.GetComponent<EnemyController> ().target = GameObject.FindWithTag ("FruitPlayer"); 
+			Enemy.GetComponent<EnemyController> ().enemySpawner = gameObject;
+			Enemy.GetComponent<EnemyController> ().setEnemyID (SpawnID);
+			Enemy.transform.SetParent (gameObject.transform);
+		} else {
+			Enemy.GetComponent<playerAttributes> ().target = GameObject.FindWithTag ("FruitPlayer"); 
+			Enemy.GetComponent<playerAttributes> ().enemySpawner = gameObject;
+			Enemy.GetComponent<playerAttributes> ().setEnemyID (SpawnID);
+			Enemy.transform.SetParent (gameObject.transform);
+		}
 	}
 
 	private void spawnEnemy(){
 		if (enemyLevels == EnemyLevels.Easy) {
 			if (EasyEnemy != null) {
+				//GameObject Enemy = Instantiate (EasyEnemy, gameObject.transform.position, Quaternion.identity) as GameObject;
+
 				GameObject Enemy = Instantiate (EasyEnemy, gameObject.transform.position, Quaternion.identity) as GameObject;
 
 
-				//set target to player
-				//string playerName = GameObject.Find("player").GetComponent<charSelection>().fs.ToString();
-				//Debug.Log ("PlayerName is " + playerName);
-				Enemy.GetComponent<yellowBugControl> ().target = GameObject.FindWithTag ("FruitPlayer"); 
-				Enemy.GetComponent<yellowBugControl> ().enemySpawner = gameObject;
-				Enemy.GetComponent<yellowBugControl> ().setEnemyID (SpawnID);
-				Enemy.transform.SetParent (gameObject.transform);
+				setEnemyCtrl (Enemy);
 			} else {
 				Debug.Log ("Error: No ez enemy Prefab loaded");
 			}
@@ -139,7 +142,7 @@ public class addEnemy : MonoBehaviour {
 		else if (enemyLevels == EnemyLevels.Medium) {
 			if (MediumEnemy != null) {
 				GameObject Enemy = Instantiate (MediumEnemy, gameObject.transform.position, Quaternion.identity) as GameObject;
-				Enemy.SendMessage ("setName", SpawnID);
+				setEnemyCtrl (Enemy);
 			} else {
 				Debug.Log ("Error: No medium enemy Prefab loaded");
 			}
@@ -147,7 +150,7 @@ public class addEnemy : MonoBehaviour {
 		else if (enemyLevels == EnemyLevels.Hard) {
 			if (HardEnemy != null) {
 				GameObject Enemy = Instantiate (HardEnemy, gameObject.transform.position, Quaternion.identity) as GameObject;
-				Enemy.SendMessage ("setName", SpawnID);
+				setEnemyCtrl (Enemy);
 			} else {
 				Debug.Log ("Error: No hard enemy Prefab loaded");
 			}
@@ -166,6 +169,7 @@ public class addEnemy : MonoBehaviour {
 		}
 		numEnemy++;
 		spawnedEnemy++;
+		//Debug.Log ("spawnedEnemy" + spawnedEnemy);
 	}
 
 

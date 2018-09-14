@@ -13,41 +13,61 @@ public enum bigLevel{
 
 public class playerController : MonoBehaviour {
 	public GameObject player, fruit, bullet;
+	public bool isEnemy;
 
 
 	public float speed = 5.0f;
 
-	public float firingRate = 0.5f;
+	public float updateRate = 0.5f;
 
 	public bigLevel biglevel;
 
-	public float shootInteval = 2f;
+	//public float shootInteval = 2f;
 	public float time = 0f;
 
 	// Use this for initialization
 	void Start () {
-		
+		isEnemy = false;
 		biglevel = bigLevel.first;
-		InvokeRepeating ("Fire", 0.0001f, firingRate);
-
+		InvokeRepeating ("updateFruit", 0.0001f, updateRate);
+		//Fire();
+		//Invoke
 
 	}
 
 
-	public void Fire(){
-		
-		if (fruit.GetComponent<playerAttributes> ().fruitname == "apple") {
-			bulletLevelUP ();
-		} else if (fruit.GetComponent<playerAttributes> ().fruitname == "banana") {
-			bulletLevelUP ();
-		} else if (fruit.GetComponent<playerAttributes> ().fruitname == "watermelon") {
-			bulletLevelUP ();
+	public void updateFruit(){
+		if (isEnemy == false) {
+			if (fruit.tag == "FruitPlayer") {
+				if (fruit.GetComponent<playerAttributes> ().fruitname == "apple") {
+					bulletLevelUP ();
+				} else if (fruit.GetComponent<playerAttributes> ().fruitname == "banana") {
+					bulletLevelUP ();
+				} else if (fruit.GetComponent<playerAttributes> ().fruitname == "watermelon") {
+					bulletLevelUP ();
+				} else if (fruit.GetComponent<playerAttributes> ().fruitname == "lime") {
+					bulletLevelUP ();
+				} else if (fruit.GetComponent<playerAttributes> ().fruitname == "pepper") {
+					bulletLevelUP ();
+				} else if (fruit.GetComponent<playerAttributes> ().fruitname == "orange") {
+					bulletLevelUP ();
+				} else if (fruit.GetComponent<playerAttributes> ().fruitname == "starfruit") {
+					bulletLevelUP ();
+					//Debug.Log ("");
+				}
+			} else {//enemy fruit
+				bulletLevelUP ();
+			}
 		}
-
-
 	}
 
 	void bulletLevelUP(){
+
+		//Debug.Log ("bulletlvlup called");
+		if (fruit.GetComponent<playerAttributes> ().fruitname == "lime") {
+			//set limectrl
+			fruit.GetComponent<limeCtrl>().bulletLvlChange =true;}
+
 		if (biglevel == bigLevel.first) {
 			setBulletLvlActive (0);
 		} else if (biglevel == bigLevel.second) {
@@ -87,58 +107,44 @@ public class playerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		/*time += Time.deltaTime;
+		if (isEnemy == false) {
+			if (gameObject.tag == "FruitPlayer") {
+				//set child transform equal to parent
+				gameObject.transform.localPosition = new Vector3 (0, 0, 0);
+				if (Input.GetKey (KeyCode.A)) {
+					player.transform.position += new Vector3 (-speed * Time.deltaTime, 0, 0);
 
-		
-		if (time > shootInteval) {
-			time -= shootInteval;
-		}*/
+					zeroVelocity ();
+					//Quaternion rotTo = Quaternion.LookRotation (new Vector3 (0,0, 10));
 
-
-		gameObject.transform.localPosition = new Vector3 (0, 0, 0);
-
-
-		if (Input.GetKey (KeyCode.A)) {
-			player.transform.position += new Vector3(-speed * Time.deltaTime,0,0);
-
-			zeroVelocity ();
-			//Quaternion rotTo = Quaternion.LookRotation (new Vector3 (0,0, 10));
-
-			//player.transform.rotation = Quaternion.Lerp (transform.rotation, rotTo, 0.3f);
+					//player.transform.rotation = Quaternion.Lerp (transform.rotation, rotTo, 0.3f);
 
 
-			player.transform.rotation = Quaternion.Euler(new Vector3(0,0,-90));
+					player.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, -90));
 
 
+				}
+				if (Input.GetKey (KeyCode.W)) {
+					player.transform.position += new Vector3 (0, speed * Time.deltaTime, 0);
+					zeroVelocity ();
+					player.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, 0));
+				}
+				if (Input.GetKey (KeyCode.S)) {
+					player.transform.position += new Vector3 (0, -speed * Time.deltaTime, 0);
+					zeroVelocity ();
+					player.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, 180));
+				}
+				if (Input.GetKey (KeyCode.D)) {
+					player.transform.position += new Vector3 (speed * Time.deltaTime, 0, 0);
+					zeroVelocity ();
+					player.transform.rotation = Quaternion.Euler (new Vector3 (0, 0, 90));
+				}
+
+			}
 		}
-		if (Input.GetKey (KeyCode.W)) {
-			player.transform.position += new Vector3(0, speed * Time.deltaTime,0);
-			zeroVelocity ();
-			player.transform.rotation = Quaternion.Euler(new Vector3(0,0,0));
+		// if this is enemy.
+		else {
 		}
-		if (Input.GetKey (KeyCode.S)) {
-			player.transform.position += new Vector3(0,-speed * Time.deltaTime,0);
-			zeroVelocity ();
-			player.transform.rotation = Quaternion.Euler(new Vector3(0,0,180));
-		}
-		if (Input.GetKey (KeyCode.D)) {
-			player.transform.position += new Vector3(speed * Time.deltaTime,0,0);
-			zeroVelocity ();
-			player.transform.rotation = Quaternion.Euler(new Vector3(0,0,90));
-		}
-
-
-		if (Input.GetMouseButtonDown (0)) {
-			//InvokeRepeating ("Fire", 0.0001f, firingRate);
-
-			//InvokeRepeating ("Fire", 0.0001f, firingRate);
-			//time -= shootInteval;
-
-		}
-		if (Input.GetMouseButtonUp (0)) {
-			//CancelInvoke("Fire");
-		}
-
 
 
 	}

@@ -50,7 +50,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1119715669592800}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -73,7 +73,7 @@ CircleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.035769142, y: 0}
   serializedVersion: 2
@@ -95,9 +95,23 @@ MonoBehaviour:
   currPos: {x: 0, y: 0, z: 0}
   health: 100
   bullet: {fileID: 1119715669592800}
+  fruit: {fileID: 0}
   speed: {x: 0, y: 0}
-  dieTime: 0
+  dieTime: 5
   time: 0
+  baseDmg: 0
+  dmgToEnemyBullet: 50
+  burnDmg: 0
+  burnTime: 0
+  poisonDmg: 0
+  percentDmg: 0
+  poisonTime: 10
+  isStatic: 0
+  slowPercent: 0
+  slowTime: 0
+  criticRate: 0
+  criticMagnifier: 0
+  lifestealPercent: 0
 --- !u!212 &212633492329895174
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -129,8 +143,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1965305767
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ba8e3e15c6d481e43bc053179154798f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

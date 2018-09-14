@@ -51,29 +51,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\bulletLvlCtrl.cs" />
+     <Compile Include="Assets\blinkScripts.cs" />
+     <Compile Include="Assets\buffSystem.cs" />
      <Compile Include="Assets\bulletRotation.cs" />
      <Compile Include="Assets\charSelection.cs" />
+     <Compile Include="Assets\CreepSpawner.cs" />
+     <Compile Include="Assets\CreepSpawnManager.cs" />
      <Compile Include="Assets\EnemyAttributes.cs" />
-     <Compile Include="Assets\enemyBulletCtrl.cs" />
-     <Compile Include="Assets\EnemySpawnManager.cs" />
      <Compile Include="Assets\gameCtrl.cs" />
      <Compile Include="Assets\LightningBolt\LightningBoltScript.cs" />
      <Compile Include="Assets\lightningBulletCtrl.cs" />
+     <Compile Include="Assets\limeBulletSizeChange.cs" />
+     <Compile Include="Assets\limeCtrl.cs" />
      <Compile Include="Assets\mousePos.cs" />
+     <Compile Include="Assets\queenSpawn.cs" />
      <Compile Include="Assets\Scripts\cameraFollow.cs" />
      <Compile Include="Assets\Scripts\Enemy\addEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\creepsControl.cs" />
-     <Compile Include="Assets\Scripts\Enemy\creepSpawn.cs" />
+     <Compile Include="Assets\Scripts\Enemy\enemyBulletCtrl.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
-     <Compile Include="Assets\Scripts\Enemy\yellowBugControl.cs" />
-     <Compile Include="Assets\Scripts\Enemy\yellowBulletControl.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemySpawnManager.cs" />
      <Compile Include="Assets\Scripts\gameUI.cs" />
      <Compile Include="Assets\Scripts\moveWithCam.cs" />
      <Compile Include="Assets\Scripts\player\BulletsController.cs" />
      <Compile Include="Assets\Scripts\player\expSystem.cs" />
      <Compile Include="Assets\Scripts\player\playerAttributes.cs" />
-     <Compile Include="Assets\Scripts\player\playerBehavior.cs" />
      <Compile Include="Assets\Scripts\player\playerController.cs" />
      <Compile Include="Assets\Scripts\textEdit.cs" />
      <Compile Include="Assets\Simple Health Bar\_Asteroids Example\Scripts\AsteroidController.cs" />
@@ -82,6 +84,8 @@
      <Compile Include="Assets\Simple Health Bar\_Asteroids Example\Scripts\PlayerController_healthbar.cs" />
      <Compile Include="Assets\Simple Health Bar\_Asteroids Example\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Simple Health Bar\Scripts\SimpleHealthBar.cs" />
+     <Compile Include="Assets\SpriteTransparency.cs" />
+     <Compile Include="Assets\surviveTimeCtrl.cs" />
      <Compile Include="Assets\UniBulletHell\Example\Script\UbhAutoDespawnParticle.cs" />
      <Compile Include="Assets\UniBulletHell\Example\Script\UbhAutoScaleGUIText.cs" />
      <Compile Include="Assets\UniBulletHell\Example\Script\UbhBackground.cs" />
@@ -201,6 +205,9 @@
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions">
+ <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>

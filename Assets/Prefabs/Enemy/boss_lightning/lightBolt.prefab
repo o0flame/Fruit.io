@@ -22,12 +22,11 @@ GameObject:
   - component: {fileID: 212753058167482356}
   - component: {fileID: 114414981373454770}
   - component: {fileID: 114232041426424878}
-  - component: {fileID: 114425974470435956}
   - component: {fileID: 58345406897962876}
   - component: {fileID: 50834006902553178}
   m_Layer: 11
   m_Name: lightBolt
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,33 +63,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1634997649513722
+--- !u!1 &1650511559723062
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4699355486420226}
-  - component: {fileID: 114625830021267080}
-  m_Layer: 11
-  m_Name: LinearLockOnShot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1688660212966276
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4352999194730390}
-  - component: {fileID: 114590715623506442}
-  m_Layer: 11
-  m_Name: 2WayAimingShot
+  - component: {fileID: 4066823444879726}
+  - component: {fileID: 114563837979659058}
+  m_Layer: 0
+  m_Name: LinearAccelAimingShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,6 +95,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4066823444879726
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1650511559723062}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4922613122091010}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4178977149895156
 Transform:
   m_ObjectHideFlags: 1
@@ -123,20 +119,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4922613122091010}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4352999194730390
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1688660212966276}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4922613122091010}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4529822495615560
 Transform:
@@ -150,19 +133,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4922613122091010}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4699355486420226
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1634997649513722}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4922613122091010}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4861027464975410
 Transform:
@@ -188,9 +158,8 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 4861027464975410}
-  - {fileID: 4352999194730390}
+  - {fileID: 4066823444879726}
   - {fileID: 4529822495615560}
-  - {fileID: 4699355486420226}
   - {fileID: 4178977149895156}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -242,10 +211,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  maxHealth: 100000
+  healthRege: 0
   speed: 1
   firingRate: 1
-  collisionDamage: -50
-  bulletDamage: -10
+  collisionDamage: 50
   target: {fileID: 0}
   bullet: {fileID: 1098281291031480, guid: 0102c4d02147f4f82ad3b44fd5250294, type: 2}
   enemySpawner: {fileID: 0}
@@ -254,6 +224,12 @@ MonoBehaviour:
   enemyID: 0
   distBetweenPlayer: 0
   chasePlayer: 0
+  poisonTime: 0
+  poisonTimeCount: 0
+  tickleTime: 0
+  isPoisoned: 0
+  isCollided: 0
+  colliderCnt: 0
 --- !u!114 &114414981373454770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,30 +248,19 @@ MonoBehaviour:
   m_loop: 1
   m_atRandom: 0
   m_shotList:
-  - m_shotObj: {fileID: 114956086926320608}
+  - m_shotObj: {fileID: 114875351316008238}
     m_afterDelay: 5
   - m_shotObj: {fileID: 114427889024294910}
     m_afterDelay: 5
-  - m_shotObj: {fileID: 114625830021267080}
+  - m_shotObj: {fileID: 114563837979659058}
     m_afterDelay: 5
-  - m_shotObj: {fileID: 114875351316008238}
+  - m_shotObj: {fileID: 114956086926320608}
     m_afterDelay: 5
   m_shotRoutineFinishedCallbackEvents:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114425974470435956
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1102397680296546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caa72ca83023f4e48965fe074fdb533d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114427889024294910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -333,54 +298,12 @@ MonoBehaviour:
   m_centerAngle: 0
   m_betweenAngle: 18
   m_nextLineDelay: 1
---- !u!114 &114590715623506442
+--- !u!114 &114563837979659058
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1688660212966276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f28eaa24639c0834489fe1cc2c45139c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isActive: 1
-  m_bulletPrefab: {fileID: 1098281291031480, guid: 0102c4d02147f4f82ad3b44fd5250294,
-    type: 2}
-  m_bulletNum: 1
-  m_bulletSpeed: 1
-  m_accelerationSpeed: 0
-  m_accelerationTurn: 0
-  m_usePauseAndResume: 0
-  m_pauseTime: 0
-  m_resumeTime: 0
-  m_useAutoRelease: 0
-  m_autoReleaseTime: 10
-  m_shotFiredCallbackEvents:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_shotFinishedCallbackEvents:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  m_wayNum: 1
-  m_centerAngle: 180
-  m_betweenAngle: 15
-  m_nextLineDelay: 1
-  m_setTargetFromTag: 1
-  m_targetTagName: Player
-  m_randomSelectTagTarget: 0
-  m_targetTransform: {fileID: 0}
-  m_aiming: 1
---- !u!114 &114625830021267080
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1634997649513722}
+  m_GameObject: {fileID: 1650511559723062}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4cf8ed6458b22394b87b4d9583c1c642, type: 3}
@@ -390,8 +313,8 @@ MonoBehaviour:
   m_bulletPrefab: {fileID: 1900850978130362, guid: c8d02c01b658d490da87e2c29fcbcb2f,
     type: 2}
   m_bulletNum: 15
-  m_bulletSpeed: 2.5
-  m_accelerationSpeed: 0
+  m_bulletSpeed: 1.5
+  m_accelerationSpeed: 5
   m_accelerationTurn: 0
   m_usePauseAndResume: 0
   m_pauseTime: 0
@@ -409,12 +332,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_angle: 180
-  m_betweenDelay: 0.3
+  m_betweenDelay: 0.1
   m_setTargetFromTag: 1
   m_targetTagName: Player
   m_randomSelectTagTarget: 0
   m_targetTransform: {fileID: 0}
-  m_aiming: 0
+  m_aiming: 1
 --- !u!114 &114875351316008238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -523,8 +446,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1639682971
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4d84d94f7b3c54bd5a572df395c2d32d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

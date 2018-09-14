@@ -50,7 +50,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1900850978130362}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   health: 100
   dmg: -5
   dmgToBullet: -50
-  dieTime: 0
+  dieTime: 3
   time: 0
 --- !u!212 &212809307436380684
 SpriteRenderer:
@@ -129,8 +129,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1965305767
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4d84d94f7b3c54bd5a572df395c2d32d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

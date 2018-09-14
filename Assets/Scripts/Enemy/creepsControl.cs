@@ -3,43 +3,80 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class creepsControl : MonoBehaviour {
-	public int health = 100;
+	public float health = 100f;
+	public float exp=50f;
+	public float dieTime = 30f;
+	public float timeCount = 0f;
 
-	public float colDmg;
+	public float scaleTime = 2f;
+	public Vector3 initScale;
+	public float scaleSpeed;
+
+	public GameObject player, creepSpawner,creepSpawnManager;
+
+
+
+
 
 	// Use this for initialization
 	void Start () {
-		colDmg = -2.0f;
+		initScale = transform.localScale;
+
+		transform.localScale = initScale / 10;
+		scaleSpeed = (initScale.x - transform.localScale.x)/scaleTime;
 	}
 
-	void hit(){
-		health -= 50;
-	}
-	/*
-	void OnTriggerEnter2D(Collider2D col){
-		hit ();
-		Destroy (col.gameObject);
-	}*/
 	void OnCollisionEnter2D(Collision2D col){
-		//Debug.Log("oncollision Func Called");
-		hit ();
-		//Debug.Log (col.gameObject.name);
-		if (col.gameObject.name == "bananaBullet(Clone)" || col.gameObject.name == "appleBullet(Clone)") {
-			Destroy (col.gameObject);
-		}
-		else if (col.gameObject.name == "player") {
-			col.gameObject.GetComponent<playerAttributes>().healthUpdate(colDmg);
+		
+		if (col.gameObject == player) {
+			hitByPlayer ();
 		}
 	}
+
+	void hitByPlayer(){
+		
+		health -= 1000f;
+	}
+
+
 
 	// Update is called once per frame
 	void Update () {
-		
+		timeCount += Time.deltaTime;
+
+
+
+		if (timeCount >= dieTime) {
+			//Destroy (gameObject);
+			Destroy (creepSpawner);
+
+			creepSpawnManager.GetComponent<CreepSpawnManager> ().numSpawner -= 1;
+
+		}
 
 
 		if (health <= 0) {
-			
-			Destroy (gameObject); //destroy this object attached to
+			player.GetComponent<expSystem>().getCreeps(exp);
+			//Destroy (gameObject);
+			Destroy (creepSpawner);
+
+			creepSpawnManager.GetComponent<CreepSpawnManager> ().numSpawner -= 1;
+
+
 		}
+
+
+
 	}
+
+
+	void LateUpdate ()
+	{
+		//Debug.Log (transform.localScale);
+		if (transform.localScale.x < initScale.x && timeCount < scaleTime) {
+			transform.localScale += new Vector3 (0.001F, 0.001f, 0);
+		}
+
+	}
+
 }

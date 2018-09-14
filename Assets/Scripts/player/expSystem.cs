@@ -27,14 +27,24 @@ public class expSystem : MonoBehaviour {
 		killEnemy = false;
 		attribute = gameObject.GetComponent<playerAttributes>();
 		level = 1;
-		maxLevel = 5;
+		maxLevel = 25;
 	}
 
 	void gainEXPinTime(){
-		if (timeForEXP >= 1.0f) {
-			exp++;
-			//exp = exp + 50f;
-			timeForEXP -= 1.0f;
+		if (gameObject.tag == "FruitPlayer") {
+			if (timeForEXP >= 1.0f) {
+				exp++;
+				//exp = exp + 50f;
+				timeForEXP -= 1.0f;
+			}
+		}
+		//enemy fruit
+		else {
+			if (timeForEXP >= 1.0f) {
+				exp += 20f;
+				//exp = exp + 50f;
+				timeForEXP -= 1.0f;
+			}
 		}
 		//Debug.Log ("!!!!!!!!!!!timeForEXP is" + timeForEXP);
 	}
@@ -51,6 +61,10 @@ public class expSystem : MonoBehaviour {
 
 	}
 
+	public void getCreeps(float e){
+		exp += e;
+	}
+
 
 	void levelup(){
 		if (exp >= expToNextLvl && level <maxLevel) {
@@ -58,27 +72,15 @@ public class expSystem : MonoBehaviour {
 			level++;
 			attribute.attributesLevelUP ();
 			exp = exp - expToNextLvl;
-			expToNextLvl += expToNextLvl * 1.5f;
+			expToNextLvl += expToNextLvl * 0.2f;
 
 		}
-
-
-
-		//get player scripts of attributes
-
-
-
-
-
-
 	}
 
 
 	void changeBigLevel(){
 		if (level == 2) {
-			
 			fruit.GetComponent<playerController> ().biglevel = bigLevel.second;
-
 		} else if (level == 3) {
 			fruit.GetComponent<playerController> ().biglevel = bigLevel.third;
 		}
@@ -92,8 +94,9 @@ public class expSystem : MonoBehaviour {
 
 
 		changeBigLevel ();
-
-		expBar.UpdateBar (exp, expToNextLvl);
+		if (gameObject.tag == "FruitPlayer") {
+			expBar.UpdateBar (exp, expToNextLvl);
+		}
 		//Debug.Log ("statement is" + (killEnemy));
 
 
@@ -105,9 +108,11 @@ public class expSystem : MonoBehaviour {
 		gainEXPinTime ();
 
 
-
+		if (gameObject.tag == "FruitPlayer") {
 		//UI
 		barText.text = "Level: " + level.ToString();
+		//Debug.Log ("level.ToString()" + level.ToString());
+		}
 
 	}
 }

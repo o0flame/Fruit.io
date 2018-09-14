@@ -147,6 +147,11 @@ public sealed class UbhShotCtrl : UbhMonoBehaviour
 				m_workShotInfoList [nowIndex].m_shotObj.SetShotCtrl (this);
 
 				if (m_workShotInfoList [nowIndex].m_shotObj.isActive == true) {   //editByFeng
+					if (m_workShotInfoList [nowIndex].m_shotObj.m_bulletPrefab.GetComponent<BulletsController>()!=null){
+						m_workShotInfoList [nowIndex].m_shotObj.m_bulletPrefab.GetComponent<BulletsController> ().team = gameObject.GetComponent<playerAttributes>().team;
+						m_workShotInfoList [nowIndex].m_shotObj.m_bulletPrefab.GetComponent<BulletsController> ().fruit = gameObject;}
+					//editByFeng
+
 					m_workShotInfoList [nowIndex].m_shotObj.Shot ();
 				}
 

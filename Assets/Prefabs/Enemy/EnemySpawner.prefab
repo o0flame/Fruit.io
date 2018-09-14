@@ -54,13 +54,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EasyEnemy: {fileID: 1742104620985866, guid: b6cc3170308384cf48f40cb10b3a32e4, type: 2}
   MediumEnemy: {fileID: 0}
-  HardEnemy: {fileID: 0}
+  HardEnemy: {fileID: 1836828099048182, guid: 93ccef4ac36584d15a2f1960fc8336ce, type: 2}
   BossEnemy: {fileID: 1102397680296546, guid: 158e78b921d654ac699d9c386d17e2c7, type: 2}
   ob: {fileID: 0}
   spawnedEnemy: 0
   numEnemy: 0
   totalEnemy: 1
-  spawnType: 2
+  spawnType: 1
   enemyLevels: 3
   waveTimer: 3
   totalWaves: 5
